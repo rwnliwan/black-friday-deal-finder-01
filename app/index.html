@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHound — Real Black Friday Deals, Checked Today</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="main.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">&#128054;</span>
+    <div>
+      <h1>DealHound</h1>
+      <p class="tagline">Sniffs out the real Black Friday deals — and calls out the fake ones.</p>
+    </div>
+  </div>
+  <div class="dates">
+    <span class="date-chip"><strong>Black Friday</strong> Fri 27 Nov 2026</span>
+    <span class="date-chip"><strong>Cyber Monday</strong> Mon 30 Nov 2026</span>
+  </div>
+  <p class="stats" id="stats">Loading deals…</p>
+</header>
+
+<section class="controls" aria-label="Find a deal">
+  <input id="search" type="search" placeholder="Search a product or store — try “AirPods”, “Dyson”, “TV”…" autocomplete="off">
+  <div class="chips" id="category-chips" role="group" aria-label="Category"></div>
+  <div class="row">
+    <label>Store
+      <select id="store-filter">
+        <option value="">All stores</option>
+      </select>
+    </label>
+    <label>Min. discount
+      <select id="discount-filter">
+        <option value="0">Any discount</option>
+        <option value="20">20% off or more</option>
+        <option value="30">30% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+    </label>
+    <label>Sort by
+      <select id="sort">
+        <option value="discount">Biggest discount first</option>
+        <option value="newlow">New lows first</option>
+        <option value="price-asc">Lowest price first</option>
+        <option value="price-desc">Highest price first</option>
+        <option value="saving">Biggest saving ($) first</option>
+      </select>
+    </label>
+  </div>
+</section>
+
+<p class="count" id="count" aria-live="polite"></p>
+<main id="deals" class="grid"></main>
+<p class="empty" id="empty" hidden>No deals match. Try a different search or loosen a filter.</p>
+
+<section class="verify">
+  <h2>How we verify</h2>
+  <ol>
+    <li><strong>Read the price at the store</strong> — or in a deals source that names the store and the price. Nothing here comes from a guess or a stale roundup.</li>
+    <li><strong>Check the maths</strong> — the % off is computed from the sale price and the usual price shown on the listing, never from a headline.</li>
+    <li><strong>Label it honestly</strong> — <span class="chip new-low">NEW LOW</span> means the lowest price ever tracked on that listing; <span class="chip strong">STRONG</span> means a genuinely big cut; <span class="chip routine">ROUTINE</span> means the sale recurs and the saving is small.</li>
+    <li><strong>Stamp the time</strong> — every card shows when its price was checked and where it was read, so you can re-check it yourself before you buy.</li>
+  </ol>
+  <p class="note">Prices move fast on Black Friday. The store's live price at checkout is the final word — if a price has changed, the link still takes you to the product.</p>
+</section>
+
+<footer>
+  <p>DealHound — 36 deals checked 27 Nov 2026, 14:57 WITA. Prices in US dollars. “Usual” is the list price the store or source showed at check time. DealHound is not affiliated with Amazon, Dell, SharkNinja or any store listed; store names belong to their owners.</p>
+  <p><a href="https://make.fun/bounty/black-friday-deal-finder-01">Built for the make.fun Black Friday deal finder bounty</a></p>
+</footer>
+</body>
+</html>
